@@ -1,0 +1,23 @@
+<div class= "panel-heading">
+    <% case @options %>
+    <% when "1" %>
+        <h3 class= "panel-title gray">Search by character name</h3>
+    <% when "2" %>
+        <h3 class= "panel-title gray">Search by episode</h3>
+    <% end %>
+</div>
+<div class= "panel-body">
+    <div class="row">
+        <div class= "col-md-4">
+            <%= form_tag home_search_path, :method => 'GET' do %>
+                <% case @options %>
+                <% when "1" %>
+                    <%= search_field_tag :name_search, '', class: 'form-control', placeholder: 'Enter the character name...'%>
+                <% when "2" %>
+                    <%= search_field_tag :episode_search, '', class: 'form-control', placeholder: 'Enter the episode number...'%>
+                <% end %><br/>
+                <%= submit_tag 'Search', class: "btn btn-primary" %>
+            <% end %>
+        </div>
+    </div>
+</div>

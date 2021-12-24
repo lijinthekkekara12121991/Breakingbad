@@ -1,0 +1,16 @@
+<div class= "panel-heading">
+    <h3 class= "panel-title gray">How to search for characters?</h3>
+</div>
+<div class= "panel-body">
+    <div class="row">
+        <div class= "col-md-4">
+            <%= form_tag home_create_path, method: 'GET' do %>
+                <%= select_tag(:search_type, options_for_select([
+                    ['Search by name', 1],
+                    ['Seach by episode', 2]
+                ]), class: "form-control") %><br/>
+                <%= submit_tag 'Proceed', class: "btn btn-primary" %>
+            <% end %>
+        </div>
+    </div>
+</div>

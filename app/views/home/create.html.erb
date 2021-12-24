@@ -1,1 +1,5 @@
-<div>Create</div>
+<% if @options.blank? %>
+    <%= render 'home/searchType' %>
+<% else %>
+    <%= render 'home/searchValue' %>
+<% end %>
